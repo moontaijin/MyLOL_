@@ -4,7 +4,7 @@ import pprint
 
 # api 받는 주소
 # https://developer.riotgames.com/
-api_key = 'RGAPI-cab8e51b-63b2-4386-ba3e-020adbdb25eb'
+api_key = ''
 summon_url = 'https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/'
 summonerName = '신사 갱플랭크'
 summoner = summon_url + summonerName + '?api_key=' + api_key
