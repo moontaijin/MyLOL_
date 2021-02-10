@@ -4,7 +4,7 @@ import pprint
 
 # api 받는 주소
 # https://developer.riotgames.com/
-api_key = 'RGAPI-3563187d-587c-4773-8299-d1b77a46f5c4'
+api_key = 'RGAPI-cab8e51b-63b2-4386-ba3e-020adbdb25eb'
 summon_url = 'https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/'
 summonerName = '신사 갱플랭크'
 summoner = summon_url + summonerName + '?api_key=' + api_key
@@ -24,11 +24,13 @@ matchlist = matchlist_url + r.json()['accountId'] + '?season=' + season + '&api_
 
 r3 = requests.get(matchlist)
 #print(r3.json()['matches'][-1]['gameId'])
-
 match_url = 'https://kr.api.riotgames.com/lol/match/v4/matches/'
-match_Num = -1
+match_Num = -2
+print(r3.json()['totalGames'])
 match_Id = str(r3.json()['matches'][match_Num]['gameId'])
 match = match_url + match_Id + '?api_key=' + api_key
 
 r4 = requests.get(match)
-print(r4.json())
+player_idx = 9
+#print(r4.json()['participants'][player_idx]['timeline']['lane'])
+#print(r4.json()['participantIdentities'][player_idx]['player']['summonerName'])
